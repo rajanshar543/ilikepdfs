@@ -27,7 +27,7 @@ class SitemapController extends Controller
             }
         }
 
-        foreach ([route('about'), route('privacy')] as $url) {
+        foreach ([route('about'), route('privacy'), route('terms'), route('contact')] as $url) {
             $xml .= '  <url><loc>'.e($url).'</loc><lastmod>'.$modified.'</lastmod></url>'."\n";
         }
 

@@ -131,12 +131,12 @@ class SeoTest extends TestCase
             [route('home'), route('hi.home')],
             array_map(fn (string $slug) => route("tools.$slug"), $slugs),
             array_map(fn (string $slug) => route("hi.tools.$slug"), $slugs),
-            [route('about'), route('privacy')],
+            [route('about'), route('privacy'), route('terms'), route('contact')],
         );
 
         $this->assertEqualsCanonicalizing($expected, $urls);
         $this->assertSame($urls, array_values(array_unique($urls)));
-        $this->assertSame(2 * (count($slugs) + 1) + 2, count($urls));
+        $this->assertSame(2 * (count($slugs) + 1) + 4, count($urls));
         $this->assertStringContainsString('hreflang="hi" href="'.route('hi.tools.merge-pdf').'"', $response->getContent());
         $this->assertStringContainsString('hreflang="x-default" href="'.route('tools.merge-pdf').'"', $response->getContent());
     }
@@ -160,7 +160,7 @@ class SeoTest extends TestCase
 
     public function test_no_competitor_brand_or_hidden_keywords_appear_anywhere(): void
     {
-        $pages = ['/', '/hi', '/about', '/privacy', '/sitemap.xml', '/robots.txt', '/offline-assets.json', '/manifest.webmanifest'];
+        $pages = ['/', '/hi', '/about', '/privacy', '/terms', '/contact', '/sitemap.xml', '/robots.txt', '/offline-assets.json', '/manifest.webmanifest'];
 
         foreach (array_keys(config('tools')) as $slug) {
             $pages[] = route("tools.$slug", [], false);

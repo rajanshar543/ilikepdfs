@@ -25,6 +25,8 @@ Route::prefix('hi')->name('hi.')->group($pages);
 
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/privacy', [PageController::class, 'privacy'])->name('privacy');
+Route::get('/terms', [PageController::class, 'terms'])->name('terms');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/sitemap.xml', [SitemapController::class, 'sitemap'])->name('sitemap');
 Route::get('/offline-assets.json', [OfflineController::class, 'assets'])->name('offline.assets');
 Route::get('/manifest.webmanifest', [OfflineController::class, 'manifest'])->name('manifest');

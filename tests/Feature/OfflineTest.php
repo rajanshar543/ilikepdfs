@@ -16,7 +16,7 @@ class OfflineTest extends TestCase
             $this->assertContains($page, $data['pages']);
         }
 
-        $this->assertCount(2 + (2 * count(config('tools'))) + 2, $data['pages']);
+        $this->assertCount(2 + (2 * count(config('tools'))) + 4, $data['pages']);
 
         foreach ($data['assets'] as $asset) {
             $this->assertStringStartsWith('/', $asset);

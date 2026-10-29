@@ -608,3 +608,14 @@ body:has(.tool.is-working) .header__inner.container, body:has(.tool.is-working) 
 }
 .theme-toggle { display: grid; place-items: center; padding: 0; cursor: pointer; }
 .mega__dot { background: currentColor !important; opacity: .85; }
+
+.prose .meta { color: var(--muted); font-size: .9rem; margin: -10px 0 18px; }
+.prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.prose .btn { text-decoration: none; }
+.prose .btn--primary { color: #fff; }
+.prose code { font: 600 .85em ui-monospace, Menlo, monospace; padding: 1px 6px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); }
+.table { width: 100%; border-collapse: collapse; margin: 4px 0 16px; font-size: .92rem; }
+.table th, .table td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.table th { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.footer__bottom a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) { .table, .table tbody, .table tr, .table td { display: block; } .table thead { display: none; } .table tr { padding: 8px 0; border-bottom: 1px solid var(--line); } .table td { border: 0; padding: 3px 0; } }

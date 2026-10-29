@@ -18,7 +18,7 @@ class OfflineController extends Controller
     public function assets(): JsonResponse
     {
         $slugs = collect(config('tools'))->keys();
-        $pages = collect(['/', '/about', '/privacy', '/hi'])
+        $pages = collect(['/', '/about', '/privacy', '/terms', '/contact', '/hi'])
             ->merge($slugs->map(fn (string $slug): string => '/'.$slug))
             ->merge($slugs->map(fn (string $slug): string => '/hi/'.$slug))
             ->all();

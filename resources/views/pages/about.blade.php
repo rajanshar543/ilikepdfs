@@ -21,6 +21,32 @@
 
         <h2>Why is it free?</h2>
         <p>Because the work happens on your device, running the site costs very little. There is no sign-up, no watermark and no daily limit.</p>
+        @if (config('site.owner'))
+            <h2>Who runs it?</h2>
+            <p>{{ config('seo.site.name') }} is run by {{ config('site.owner') }}.@if (config('site.email')) Write to <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a>.@endif</p>
+        @endif
+
+        <h2 id="credits">Open-source credits</h2>
+        <p>ilikepdfs stands on the work of these open-source projects. Each stays under its own license.</p>
+        <table class="table">
+            <thead><tr><th>Project</th><th>Used for</th><th>License</th></tr></thead>
+            <tbody>
+                <tr><td>pdf-lib</td><td>Creating and editing PDF files</td><td>MIT</td></tr>
+                <tr><td>PDF.js (Mozilla)</td><td>Showing and reading PDF pages</td><td>Apache-2.0</td></tr>
+                <tr><td>qpdf (WebAssembly)</td><td>Encrypting, decrypting and repairing PDFs</td><td>Apache-2.0 / ISC wrapper</td></tr>
+                <tr><td>Tesseract.js and language data</td><td>Text recognition (OCR)</td><td>Apache-2.0</td></tr>
+                <tr><td><a href="https://github.com/catdad-experiments/libheif-js" rel="noopener">libheif-js</a></td><td>Reading iPhone HEIC photos</td><td>LGPL-3.0</td></tr>
+                <tr><td>UTIF.js (utif2)</td><td>Reading TIFF images</td><td>MIT</td></tr>
+                <tr><td>mammoth.js</td><td>Reading Word files</td><td>BSD-2-Clause</td></tr>
+                <tr><td>PptxGenJS</td><td>Creating PowerPoint files</td><td>MIT</td></tr>
+                <tr><td>read-excel-file, fast-xml-parser, fflate, UPNG.js</td><td>Spreadsheets, XML, ZIP and PNG compression</td><td>MIT</td></tr>
+                <tr><td>jSquash WebP</td><td>WebP encoding</td><td>Apache-2.0</td></tr>
+                <tr><td>fontkit, Noto Sans, Inter, Bricolage Grotesque</td><td>Fonts and text shaping</td><td>MIT / SIL Open Font License</td></tr>
+                <tr><td><a href="https://github.com/dompdf/dompdf" rel="noopener">Dompdf</a></td><td>HTML to PDF (on our server)</td><td>LGPL-2.1</td></tr>
+                <tr><td>Laravel</td><td>The website itself</td><td>MIT</td></tr>
+            </tbody>
+        </table>
+        <p>The LGPL libraries (libheif-js and Dompdf) are used unmodified, and their source code is available at the links above.</p>
         <p><a class="btn btn--primary" href="{{ lroute('home') }}#tools">Browse all tools</a></p>
     </article>
 @endsection

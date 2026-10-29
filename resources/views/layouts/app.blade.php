@@ -116,6 +116,8 @@
                         <li><a href="{{ lroute('home') }}#tools">{{ __('All tools') }}</a></li>
                         <li><a href="{{ route('about') }}">{{ __('About') }}</a></li>
                         <li><a href="{{ route('privacy') }}">{{ __('Privacy policy') }}</a></li>
+                        <li><a href="{{ route('terms') }}">{{ __('Terms of use') }}</a></li>
+                        <li><a href="{{ route('contact') }}">{{ __('Contact') }}</a></li>
                         <li><a href="{{ locale_url(app()->getLocale() === 'hi' ? 'en' : 'hi') }}" @if (app()->getLocale() !== 'hi') hreflang="hi" lang="hi" @else hreflang="en" lang="en" @endif>{{ app()->getLocale() === 'hi' ? 'English' : 'हिन्दी' }}</a></li>
                         <li class="offline" data-offline-box hidden><button type="button" class="offline__btn" data-offline>{{ __('Save for offline use') }}</button><span class="offline__status" data-offline-status></span></li>
                     </ul>
@@ -123,7 +125,7 @@
             </div>
             <div class="footer__bottom">
                 <span>&copy; {{ date('Y') }} {{ config('app.name') }}</span>
-                <span>{{ __('Your files stay on your device.') }}</span>
+                <span>{{ __('Your files stay on your device.') }} <a href="{{ route('privacy') }}">{{ __('Privacy policy') }}</a> · <a href="{{ route('terms') }}">{{ __('Terms of use') }}</a></span>
             </div>
         </div>
     </footer>
